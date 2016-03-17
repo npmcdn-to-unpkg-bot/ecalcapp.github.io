@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app>
+    <head>
+        <base href="/">
+        <title>Калькулятор электроэнергии</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+        <script src="https://npmcdn.com/angular2@2.0.0-beta.8/es6/dev/src/testing/shims_for_IE.js"></script>
+
+        <script src="https://code.angularjs.org/2.0.0-beta.8/angular2-polyfills.js"></script>
+        <script src="https://code.angularjs.org/tools/system.js"></script>
+        <script src="https://npmcdn.com/typescript@1.8.2/lib/typescript.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-beta.8/Rx.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-beta.8/angular2.dev.js"></script>
+        <script src="https://code.angularjs.org/2.0.0-beta.8/router.dev.js"></script>
+        <script>
+            System.config({
+                transpiler: 'typescript',
+                typescriptOptions: {emitDecoratorMetadata: true},
+                packages: {'ecalc': {defaultExtension: 'ts'}}
+            });
+            System.import('ecalc/main')
+ .then(null, console.error.bind(console));
+</script>
+</head>
+
+<body>
+    <ecalc-app></ecalc-app>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-75235349-1', 'auto');
+  ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

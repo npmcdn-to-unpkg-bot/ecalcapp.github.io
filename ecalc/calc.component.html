@@ -1,0 +1,16 @@
+<div>
+    <table>
+        <tr *ngFor='#phase of tariffService.phases; #i=index'>
+            <td>{{phase.title}}</td>
+            <td><input [(ngModel)]='counsumptions[i]' type='number' min="0"> кВт·ч</td>
+        </tr>
+    </table>
+</div>
+<div id="payment">
+    <strong>К оплате: </strong>{{getCurrency()}} грн. {{getCoins()}} коп.
+</div>
+<div id="phases-quickswitcher">
+    <button (click)='tariffService.applySetting(getSetting("OnePhaseTariffSetting"))' class="btn btn-default">1-зонный тариф</button>
+    <button (click)='tariffService.applySetting(getSetting("TwoPhaseTariffSetting"))' class="btn btn-default">2-зонный тариф</button>
+    <button (click)='tariffService.applySetting(getSetting("ThreePhaseTariffSetting"))' class="btn btn-default">3-зонный тариф</button>
+</div>

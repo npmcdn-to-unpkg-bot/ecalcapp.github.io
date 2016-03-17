@@ -1,0 +1,33 @@
+<div>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Коэффициент</td>
+        </tr>
+        <tr *ngFor='#phase of tariffService.phases; #i=index'>
+            <td><input [(ngModel)]='phase.title' type="text" min="0"></td>
+            <td><input class="factor-input" [(ngModel)]='phase.factor' type="number" min="0"></td>
+            <td><button (click)='tariffService.removePhase(i)' type="button" class="btn btn-default">Удалить</button></td>
+        </tr>
+    </table>
+    <button (click)='tariffService.addPhase()' type="button" class="btn btn-default">Добавить</button>
+</div>
+<div id="tariff-setting">
+    <table *ngIf='tariffService.tariffs.length > 1'>
+        <tr *ngFor='#limit of getLimits(); #i=index'>
+            <td>до</td>
+            <td><input class="limit-input" [(ngModel)]='limit.v' type="number" min="0"> кВт·ч</td>
+            <td><input class="cost-input" [(ngModel)]='tariffService.tariffs[i*2].v' type="number" min="0"> коп.</td>
+            <td><button (click)='tariffService.removeLimit(i)' type="button" class="btn btn-default">Удалить</button></td>
+        </tr>
+        <tr>
+            <td>больше</td>
+            <td><input class="limit-input" [(ngModel)]='tariffService.tariffs[tariffService.tariffs.length-2].v' type="number" min="0"> кВт·ч</td>
+            <td><input class="cost-input" [(ngModel)]='tariffService.tariffs[tariffService.tariffs.length-1].v' type="number" min="0"> коп.</td>
+        </tr>
+    </table>
+    <div *ngIf='tariffService.tariffs.length == 1'>
+        1 кВт·ч <input [(ngModel)]='tariffService.tariffs[tariffService.tariffs.length-1].v' type="number" min="0"> коп.
+    </div>
+    <button (click)='tariffService.addLimit()' type="button" class="btn btn-default">Добавить</button>
+</div>

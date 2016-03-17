@@ -1,0 +1,25 @@
+td
+{
+    padding-right: 5px;
+    padding-bottom: 5px;   
+}
+input
+{
+    width: 100px;
+}
+.factor-input
+{
+    width: 50px;
+}
+.cost-input
+{
+    width: 75px;
+}
+.limit-input
+{
+    width: 75px;
+}
+#tariff-setting
+{
+    margin-top: 20px;
+}

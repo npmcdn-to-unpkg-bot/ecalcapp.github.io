@@ -10,7 +10,7 @@ export class TariffService
      {
         this.phases = [{ 'title': 'Ночь', 'factor': 0.5 },
             { 'title': 'День', 'factor': 1 }];
-        this.tariffs = [{ 'v': 57 }, { 'v': 100 }, { 'v': 99 }, { 'v': 600 }, { 'v': 156 }];
+        this.tariffs = [{ 'v': 71.4 }, { 'v': 100 }, { 'v': 129 }, { 'v': 600 }, { 'v': 163.8 }];
     }
     calculate(consumptionList: number[]) {
         let consumptionSum = consumptionList.reduce((prev, phase) => prev + phase);
